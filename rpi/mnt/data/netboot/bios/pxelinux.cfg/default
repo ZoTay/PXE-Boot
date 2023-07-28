@@ -1,0 +1,23 @@
+
+MENU TITLE  PXE Boot Menu
+DEFAULT    install
+TIMEOUT	1
+    LABEL local
+        MENU LABEL Boot from local drive
+        LOCALBOOT 0xffff
+
+    MENU BEGIN amd64
+    MENU TITLE amd64
+
+        MENU BEGIN Debian
+        MENU TITLE Debian
+
+            LABEL install
+                MENU LABEL ^Install
+                KERNEL ::boot/amd64/debian/12/vmlinuz
+                APPEND auto=true priority=high hw-detect/load_firmware=false netcfg/choose_interface=auto netcfg/use_autoconfig=true netcfg/get_nameservers= netcfg/get_hostname=debian netcfg/get_domain= preseed/url=http://192.168.0.10/preseed.cfg vga=788 initrd=::boot/amd64/debian/12/initrd.gz --- quiet
+                #APPEND vga=788 initrd=::boot/amd64/debian/12/initrd.gz --- quiet
+                #APPEND auto=true priority=high preseed/url=http://192.168.137.1/preseed.cfg vga=788 initrd=::boot/amd64/debian/12/initrd.gz --- quiet
+            MENU END
+
+    MENU END

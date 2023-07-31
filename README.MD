@@ -44,7 +44,7 @@ sudo mkdir -p /mnt/data/netboot/pxelinux.cfg
 11. Create configuration file “default”, if you want to create a configuration file for a specific mac address, use in the format 01-XX-XX-XX-XX-XX-XX and replace XX with the mac address. 01 means that the connection is through an ethernet port. Refer to https://wiki.syslinux.org/wiki/index.php?title=PXELINUX for more details
 ```
 sudo nano /mnt/data/netboot/pxelinux.cfg/default
-Copy text over from https://drive.google.com/file/d/1_gHRzml08iT3Q2B5RntRm79D5Ac-U-Kp/view?usp=drive_link 
+Copy text over from **PXE-Boot-main/rpi/mnt/data/netboot/pxelinux.cfg**
 ```
 12. Create directory for Apache server usage
 ```
@@ -53,7 +53,7 @@ sudo mkdir -p /var/www/deb
 13. Set-up Apache Server
 ```
 sudo nano /etc/apache2/sites-available/debian.conf
-Copy text over from https://drive.google.com/file/d/1AB3BncmX2yK1zuNPzygiyB4k6WaICzvX/view?usp=drive_link 
+Copy text over from **PXE-Boot-main/rpi/etc/apache2/sites-available/debian.conf**
 sudo a2ensite /etc/apache2/sites-available/debian.conf
 sudo a2dissite /etc/apache2/sites-available/000-default.conf
 sudo systemctl restart apache2
@@ -64,17 +64,17 @@ sudo systemctl restart apache2
 If you are planning on doing an online install, change “d-i mirror/http/hostname” to an online repo instead of the RPI itself
 ```
 sudo nano /var/www/deb/preseed.cfg
-Copy over text from https://drive.google.com/file/d/1QuRK3pqJB4ZatjqVdtatRMxIN9-K4buL/view?usp=drive_link
+Copy over text from **PXE-Boot-main/rpi/var/www/deb/preseed.cfg**
 ```
 15. Offline Install (Optional)
 - Manual
     - Pipe internet connection through the computer
     - Use wireshark to sniff the packages downloaded and installed during online installation
     - Export logs from wireshark
-    - Use the python script https://drive.google.com/file/d/1Jd8JDkI1z0m2C3sNgNUFj2lJtnPDvSVu/view?usp=drive_link to download and put the files in the correct directory and copy the var folder to the root directory of the RPI
+    - Use the python script **PXE-Boot-main/debian dep downloader.py** to download and put the files in the correct directory and copy the var folder to the root directory of the RPI
 
 - Preset
-    - Download the debian folder https://drive.google.com/drive/folders/1oTIDP06YevqyPWj__rVmtlCbYOl1XZcO?usp=drive_link and copy it to /var/www/deb folder
+    - Download the debian folder PXE-Boot-main/rpi/var/www/deb and copy it to /var/www/deb folder
 
 16. Restart RPI
 ```
@@ -83,14 +83,14 @@ sudo reboot now
 17.  Challenges setup (Optional)
 ```
 sudo nano /var/www/deb/motd
-Copy over text from https://drive.google.com/file/d/1o7rOHcbHUzMGoLox1Qk67QpvAw0ewFAu/view?usp=drive_link 
+Copy over text from PXE-Boot-main/rpi/var/www/deb/motd 
 sudo nano /var/www/deb/index.html
-Copy over text from https://drive.google.com/file/d/1NhjYzub1Nie_rOmvz4c1qGIhJBUXF3Nb/view?usp=drive_link 
+Copy over text from PXE-Boot-main/rpi/var/www/deb/index.html
 sudo mkdir -p /var/www/dns
 sudo nano /var/www/dns/index.html
-Copy over text from https://drive.google.com/file/d/10ESimI5eH3WpZqqauIa00pWQbKul6Qnz/view?usp=drive_link 
+Copy over text from PXE-Boot-main/rpi/var/www/ddns/index.html 
 sudo nano /etc/apache2/sites-available/dns.conf
-Copy over text from https://drive.google.com/file/d/150db1rL5jj6UkBNOLVIkhxnuPk8NjOaB/view?usp=drive_link 
+Copy over text from PXE-Boot-main/rpi/etc/apache2/sites-available/dns.conf
 sudo a2ensite /etc/apache2/sites-available/dns.conf
 sudo systemctl restart apache2
 ```

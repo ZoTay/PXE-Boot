@@ -112,9 +112,10 @@ Flash .img file to an empty micro sd card
 Boot into system with username: radio and Password: googleswag
 
 # OS Configuration
-All configurations are done through the preseed.cfg file with the line 
+- All configurations are done through the preseed.cfg file with the line
+``` 
 d-i preseed/late_command string
-
-The OS files are located in the /target directory
-For any commands to be used from the OS, use the in-target prefix before the command, skip using /target and use / as it will be run in the /target directory
-If you are piping to a file using echo, do not use the in-target prefix as it ignores the piping and be piped to stdout instead and not to the targeted file
+```
+- The OS files are located in the /target directory
+- For any commands to be used from the OS, use the in-target prefix before the command, skip using /target and use / as it will be run in the /target directory
+- If you are piping to a file using echo, do not use the in-target prefix as it ignores the piping and be piped to stdout instead and not to the targeted file

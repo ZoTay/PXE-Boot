@@ -45,7 +45,7 @@ sudo mkdir -p /mnt/data/netboot/pxelinux.cfg
 ```
 sudo nano /mnt/data/netboot/pxelinux.cfg/default
 ```
-    Copy text over from **PXE-Boot-main/rpi/mnt/data/netboot/pxelinux.cfg**
+Copy text over from **PXE-Boot-main/rpi/mnt/data/netboot/pxelinux.cfg**
 
 12. Create directory for Apache server usage
 ```
@@ -55,7 +55,7 @@ sudo mkdir -p /var/www/deb
 ```
 sudo nano /etc/apache2/sites-available/debian.conf
 ```
-    Copy text over from **PXE-Boot-main/rpi/etc/apache2/sites-available/debian.conf**
+Copy text over from **PXE-Boot-main/rpi/etc/apache2/sites-available/debian.conf**
 ```
 sudo a2ensite /etc/apache2/sites-available/debian.conf
 sudo a2dissite /etc/apache2/sites-available/000-default.conf
@@ -88,20 +88,20 @@ sudo reboot now
 ```
 sudo nano /var/www/deb/motd
 ```
-Copy over text from PXE-Boot-main/rpi/var/www/deb/motd 
+Copy over text from **PXE-Boot-main/rpi/var/www/deb/motd**
 ```
 sudo nano /var/www/deb/index.html
 ```
-Copy over text from PXE-Boot-main/rpi/var/www/deb/index.html
+Copy over text from **PXE-Boot-main/rpi/var/www/deb/index.html**
 ```
 sudo mkdir -p /var/www/dns
 sudo nano /var/www/dns/index.html
 ```
-Copy over text from PXE-Boot-main/rpi/var/www/ddns/index.html 
+Copy over text from **PXE-Boot-main/rpi/var/www/ddns/index.html** 
 ```
 sudo nano /etc/apache2/sites-available/dns.conf
 ```
-Copy over text from PXE-Boot-main/rpi/etc/apache2/sites-available/dns.conf
+Copy over text from **PXE-Boot-main/rpi/etc/apache2/sites-available/dns.conf**
 ```
 sudo a2ensite /etc/apache2/sites-available/dns.conf
 sudo systemctl restart apache2

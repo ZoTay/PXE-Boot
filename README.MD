@@ -44,8 +44,9 @@ sudo mkdir -p /mnt/data/netboot/pxelinux.cfg
 11. Create configuration file “default”, if you want to create a configuration file for a specific mac address, use in the format 01-XX-XX-XX-XX-XX-XX and replace XX with the mac address. 01 means that the connection is through an ethernet port. Refer to https://wiki.syslinux.org/wiki/index.php?title=PXELINUX for more details
 ```
 sudo nano /mnt/data/netboot/pxelinux.cfg/default
-Copy text over from **PXE-Boot-main/rpi/mnt/data/netboot/pxelinux.cfg**
 ```
+    Copy text over from **PXE-Boot-main/rpi/mnt/data/netboot/pxelinux.cfg**
+
 12. Create directory for Apache server usage
 ```
 sudo mkdir -p /var/www/deb
@@ -53,7 +54,9 @@ sudo mkdir -p /var/www/deb
 13. Set-up Apache Server
 ```
 sudo nano /etc/apache2/sites-available/debian.conf
-Copy text over from **PXE-Boot-main/rpi/etc/apache2/sites-available/debian.conf**
+```
+    Copy text over from **PXE-Boot-main/rpi/etc/apache2/sites-available/debian.conf**
+```
 sudo a2ensite /etc/apache2/sites-available/debian.conf
 sudo a2dissite /etc/apache2/sites-available/000-default.conf
 sudo systemctl restart apache2
@@ -64,8 +67,9 @@ sudo systemctl restart apache2
 If you are planning on doing an online install, change “d-i mirror/http/hostname” to an online repo instead of the RPI itself
 ```
 sudo nano /var/www/deb/preseed.cfg
-Copy over text from **PXE-Boot-main/rpi/var/www/deb/preseed.cfg**
 ```
+    Copy over text from **PXE-Boot-main/rpi/var/www/deb/preseed.cfg**
+
 15. Offline Install (Optional)
 - Manual
     - Pipe internet connection through the computer
@@ -83,14 +87,22 @@ sudo reboot now
 17.  Challenges setup (Optional)
 ```
 sudo nano /var/www/deb/motd
-Copy over text from PXE-Boot-main/rpi/var/www/deb/motd 
+```
+    Copy over text from PXE-Boot-main/rpi/var/www/deb/motd 
+```
 sudo nano /var/www/deb/index.html
-Copy over text from PXE-Boot-main/rpi/var/www/deb/index.html
+```
+    Copy over text from PXE-Boot-main/rpi/var/www/deb/index.html
+```
 sudo mkdir -p /var/www/dns
 sudo nano /var/www/dns/index.html
-Copy over text from PXE-Boot-main/rpi/var/www/ddns/index.html 
+```
+    Copy over text from PXE-Boot-main/rpi/var/www/ddns/index.html 
+```
 sudo nano /etc/apache2/sites-available/dns.conf
-Copy over text from PXE-Boot-main/rpi/etc/apache2/sites-available/dns.conf
+```
+    Copy over text from PXE-Boot-main/rpi/etc/apache2/sites-available/dns.conf
+```
 sudo a2ensite /etc/apache2/sites-available/dns.conf
 sudo systemctl restart apache2
 ```

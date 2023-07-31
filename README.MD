@@ -68,7 +68,7 @@ If you are planning on doing an online install, change “d-i mirror/http/hostna
 ```
 sudo nano /var/www/deb/preseed.cfg
 ```
-    Copy over text from **PXE-Boot-main/rpi/var/www/deb/preseed.cfg**
+Copy over text from **PXE-Boot-main/rpi/var/www/deb/preseed.cfg**
 
 15. Offline Install (Optional)
 - Manual
@@ -88,20 +88,20 @@ sudo reboot now
 ```
 sudo nano /var/www/deb/motd
 ```
-    Copy over text from PXE-Boot-main/rpi/var/www/deb/motd 
+Copy over text from PXE-Boot-main/rpi/var/www/deb/motd 
 ```
 sudo nano /var/www/deb/index.html
 ```
-    Copy over text from PXE-Boot-main/rpi/var/www/deb/index.html
+Copy over text from PXE-Boot-main/rpi/var/www/deb/index.html
 ```
 sudo mkdir -p /var/www/dns
 sudo nano /var/www/dns/index.html
 ```
-    Copy over text from PXE-Boot-main/rpi/var/www/ddns/index.html 
+Copy over text from PXE-Boot-main/rpi/var/www/ddns/index.html 
 ```
 sudo nano /etc/apache2/sites-available/dns.conf
 ```
-    Copy over text from PXE-Boot-main/rpi/etc/apache2/sites-available/dns.conf
+Copy over text from PXE-Boot-main/rpi/etc/apache2/sites-available/dns.conf
 ```
 sudo a2ensite /etc/apache2/sites-available/dns.conf
 sudo systemctl restart apache2
